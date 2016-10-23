@@ -23,5 +23,20 @@ public:
 
 private:
 
+	void FindPhysicsHandleComponent();
+	void SetupInputComponent();
+
+	void Grab();
+	void Release();
+
+	const FHitResult GetFirstPhysicsBodyInReach();
+
+	const FVector GetLineTraceStart();
+	const FVector GetLineTraceEnd();
+
 	float Reach = 100.f;
+
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+
+	UInputComponent* InputComponent = nullptr;
 };
