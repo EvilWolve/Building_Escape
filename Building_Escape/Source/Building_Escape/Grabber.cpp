@@ -53,6 +53,11 @@ void UGrabber::TickComponent( float DeltaTime, ELevelTick TickType, FActorCompon
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
+	if (PhysicsHandle == nullptr)
+	{
+		return;
+	}
+
 	if (PhysicsHandle->GrabbedComponent)
 	{
 		FVector lineTraceEnd = GetLineTraceEnd();
